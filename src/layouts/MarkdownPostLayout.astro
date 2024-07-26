@@ -1,22 +1,22 @@
 ---
-import type { Post } from "../types/posts";
+import type { Post } from "../content/config";
 import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
-  frontmatter: Post;
+  post: Post;
 }
 
-const { frontmatter } = Astro.props;
+const { post } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
-  <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
-  <p><em>{frontmatter.description}</em></p>
-  <p>Écrit par : {frontmatter.author}</p>
-  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+<BaseLayout pageTitle={post.title}>
+  <p>{post.pubDate.toString().slice(0, 10)}</p>
+  <p><em>{post.description}</em></p>
+  <p>Écrit par : {post.author}</p>
+  <img src={post.image.url} width="300" alt={post.image.alt} />
   <div class="tags">
     {
-      frontmatter.tags.map((tag) => (
+      post.tags.map((tag) => (
         <p class="tag">
           <a href={`/tags/${tag}`}>{tag}</a>
         </p>

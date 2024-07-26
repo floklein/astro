@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: Mon quatrième billet de blog
 author: Apprenti Astro
 description: "Ce billet apparaîtra tout seul !"
@@ -10,4 +9,4 @@ pubDate: 2022-08-08
 tags: ["astro", "réussites"]
 ---
 
-Ce billet devrait apparaître avec mes autres billets de blog, car `Astro.glob()` renvoie une liste de tous mes billets pour créer ma liste.
+Ce billet devrait apparaître avec mes autres billets de blog, car `getCollection()` renvoie une liste de tous mes billets pour créer ma liste.
