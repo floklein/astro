@@ -2,11 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
 import { getCollection } from "astro:content";
-import type {
-  GetStaticPaths,
-  InferGetStaticParamsType,
-  InferGetStaticPropsType,
-} from "astro";
+import type { GetStaticPaths } from "astro";
 
 export const getStaticPaths = (async () => {
   const allPosts = await getCollection("posts");
@@ -24,10 +20,7 @@ export const getStaticPaths = (async () => {
   });
 }) satisfies GetStaticPaths;
 
-type Params = InferGetStaticParamsType<typeof getStaticPaths>;
-type Props = InferGetStaticPropsType<typeof getStaticPaths>;
-
-const { tag } = Astro.params as Params;
+const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
